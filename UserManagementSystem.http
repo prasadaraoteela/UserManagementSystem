@@ -2,13 +2,16 @@
 
 ###
 GET {{UserManagementSystem_HostAddress}}/api/users
+Authorization: securetoken
 
 ###
 GET {{UserManagementSystem_HostAddress}}/api/users/1
+Authorization: securetoken
 
 ###
 POST {{UserManagementSystem_HostAddress}}/api/users
 Content-Type: application/json
+Authorization: securetoken
 
 {
     "id":4,
@@ -19,6 +22,7 @@ Content-Type: application/json
 ### Invalid POST Request
 POST {{UserManagementSystem_HostAddress}}/api/users
 Content-Type: application/json
+Authorization: securetoken
 
 {
     "id":4,
@@ -29,6 +33,7 @@ Content-Type: application/json
 ###
 PUT {{UserManagementSystem_HostAddress}}/api/users/4
 Content-Type: application/json
+Authorization: securetoken
 
 {
     "id":4,
@@ -38,9 +43,12 @@ Content-Type: application/json
 
 ###
 DELETE {{UserManagementSystem_HostAddress}}/api/users/4
+Authorization: securetoken
 
 ### Bad Request
 DELETE {{UserManagementSystem_HostAddress}}/api/users/10
+Authorization: securetoken
 
 ###
 GET {{UserManagementSystem_HostAddress}}/division?numerator=10&denominator=0
+Authorization: securetoken

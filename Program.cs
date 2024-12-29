@@ -45,6 +45,7 @@ try
 
     app.UseRouting();
 
+    app.UseMiddleware<TokenValidationMiddleware>();
     app.UseMiddleware<RequestResponseLoggingMiddleware>();
     app.UseMiddleware<ExceptionHandlingMiddleware>();
 

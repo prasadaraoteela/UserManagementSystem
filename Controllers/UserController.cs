@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
 using UserManagementSystem.Models;
@@ -33,15 +35,24 @@ namespace UserManagementSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateUser(User user)
+        public IActionResult CreateUser([FromBody] User user)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             Users.Add(user);
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateUser(int id, User user)
+        public IActionResult UpdateUser(int id, [FromBody] User user)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var existingUser = Users.FirstOrDefault(u => u.Id == id);
             if (existingUser == null)
             {

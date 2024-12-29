@@ -16,6 +16,16 @@ Content-Type: application/json
     "email": "doe@example.com"
 }
 
+### Invalid POST Request
+POST {{UserManagementSystem_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+    "id":4,
+    "name": "Doe",
+    "email": "invalidemail"
+}
+
 ###
 PUT {{UserManagementSystem_HostAddress}}/api/users/4
 Content-Type: application/json
@@ -28,3 +38,9 @@ Content-Type: application/json
 
 ###
 DELETE {{UserManagementSystem_HostAddress}}/api/users/4
+
+### Bad Request
+DELETE {{UserManagementSystem_HostAddress}}/api/users/10
+
+###
+GET {{UserManagementSystem_HostAddress}}/division?numerator=10&denominator=0

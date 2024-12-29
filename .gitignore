@@ -1,0 +1,48 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore Rider project files
+.idea/
+
+# Ignore Visual Studio Code workspace settings
+.vscode/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore compiled DLLs
+*.dll
+
+# Ignore compiled PDBs
+*.pdb
+
+# Ignore compiled EXEs
+*.exe
+
+# Ignore compiled JARs
+*.jar
+
+# Ignore compiled WARs
+*.war
+
+# Ignore compiled EARs
+*.ear
+
+# Ignore compiled class files
+*.class

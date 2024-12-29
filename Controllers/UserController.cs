@@ -9,24 +9,22 @@ namespace UserManagementSystem.Controllers
     public class UserController : ControllerBase
     {
 
-        private readonly List<User> _users = new List<User>
-        {
+        private static readonly List<User> Users = [
             new() { Id = 1, Name = "John Doe", Email = "john@example.com" },
             new() { Id = 2, Name = "Peter Parker", Email = "peter@example.com" },
             new() { Id = 3, Name = "Mary Jane", Email = "mary@example.com" }
-        };
-
+        ];
 
         [HttpGet]
         public IActionResult GetUsers()
         {
-            return Ok(_users);
+            return Ok(Users);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
-            var user = _users.FirstOrDefault(u => u.Id == id);
+            var user = Users.FirstOrDefault(u => u.Id == id);
             if (user == null)
             {
                 return NotFound();
@@ -37,14 +35,14 @@ namespace UserManagementSystem.Controllers
         [HttpPost]
         public IActionResult CreateUser(User user)
         {
-            _users.Add(user);
+            Users.Add(user);
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
         }
 
         [HttpPut("{id}")]
         public IActionResult UpdateUser(int id, User user)
         {
-            var existingUser = _users.FirstOrDefault(u => u.Id == id);
+            var existingUser = Users.FirstOrDefault(u => u.Id == id);
             if (existingUser == null)
             {
                 return NotFound();
@@ -57,12 +55,12 @@ namespace UserManagementSystem.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteUser(int id)
         {
-            var user = _users.FirstOrDefault(u => u.Id == id);
+            var user = Users.FirstOrDefault(u => u.Id == id);
             if (user == null)
             {
                 return NotFound();
             }
-            _users.Remove(user);
+            Users.Remove(user);
             return NoContent();
         }
     }

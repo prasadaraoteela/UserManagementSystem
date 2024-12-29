@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lVGpUk7Qelk=",
+  "success": true,
+  "projectFilePath": "/Users/prasad/dev/learn/dotnet/UserManagementSystem/UserManagementSystem.csproj",
+  "expectedPackageFiles": [
+    "/Users/prasad/.nuget/packages/microsoft.aspnetcore.openapi/9.0.0/microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "/Users/prasad/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

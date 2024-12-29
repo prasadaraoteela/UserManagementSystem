@@ -1,0 +1,30 @@
+@UserManagementSystem_HostAddress = http://localhost:5086
+
+###
+GET {{UserManagementSystem_HostAddress}}/api/users
+
+###
+GET {{UserManagementSystem_HostAddress}}/api/users/1
+
+###
+POST {{UserManagementSystem_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+    "id":4,
+    "name": "Doe",
+    "email": "doe@example.com"
+}
+
+###
+PUT {{UserManagementSystem_HostAddress}}/api/users/4
+Content-Type: application/json
+
+{
+    "id":4,
+    "name": "Doe",
+    "email": "doe@newdomain.com"
+}
+
+###
+DELETE {{UserManagementSystem_HostAddress}}/api/users/4

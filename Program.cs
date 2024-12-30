@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.HttpLogging;
 using Serilog;
 using Serilog.Templates;
 using Serilog.Templates.Themes;
-using UserManagementSystem;
+
+using UserManagementSystem.Middleware;
 
 try
 {
